@@ -6,7 +6,7 @@ module Decidim
     DECIDIM_VERSION = [">= 0.27.0", "< 0.28"].freeze
 
     def self.version
-      "0.27.4"
+      "0.27.0"
     end
   end
 end
