@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    decidim-calendar (0.27.4)
+    decidim-calendar (0.27.0)
       decidim-admin (>= 0.27.0, < 0.28)
       decidim-core (>= 0.27.0, < 0.28)
 
