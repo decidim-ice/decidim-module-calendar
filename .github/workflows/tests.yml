@@ -58,7 +58,7 @@ jobs:
       - name: Run RSpec
         run: bundle exec rspec
         env:
-          CODECOV: 1
+          SIMPLECOV: 1
 
       - uses: actions/upload-artifact@v3
         with:
