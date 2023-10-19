@@ -58,7 +58,8 @@ jobs:
       - name: Run RSpec
         run: bundle exec rspec
         env:
-          SIMPLECOV: 1
+          CODECOCOV: 1
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - uses: actions/upload-artifact@v3
         with:
