@@ -9,7 +9,6 @@ on:
 env:
   RUBY_VERSION: 3.0.6
   NODE_VERSION: 16.9.1
-  CODECOV: "true"
 
 jobs:
   test-report:
@@ -58,13 +57,15 @@ jobs:
 
       - name: Run RSpec
         run: bundle exec rspec
-
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
         env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          CODECOV: 1
 
       - uses: actions/upload-artifact@v3
         with:
           name: screenshots
           path: ./spec/decidim_dummy_app/tmp/screenshots
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
