@@ -25,7 +25,7 @@ const getInitialDate = () => {
   let year = today.getFullYear();
   let month = today.getMonth();
   let day = today.getDate();
-  window.location.hash.substr(1).split("&").forEach((v) => {
+  window.location.hash.substring(1).split("&").forEach((v) => {
     if (v.match("^year")) {
       year = v.substring(5);
     }
@@ -41,7 +41,7 @@ const getInitialDate = () => {
 
 const getInitialView = () => {
   let view = calendarEl.dataset.defaultview || "dayGridMonth"
-  window.location.hash.substr(1).split("&").forEach((v) => {
+  window.location.hash.substring(1).split("&").forEach((v) => {
     if (v.match("^view")) {
       view = v.substring(5);
     }
@@ -51,7 +51,7 @@ const getInitialView = () => {
 
 const getInitialFilters = () => {
   let filters = false;
-  window.location.hash.substr(1).split("&").forEach((v) => {
+  window.location.hash.substring(1).split("&").forEach((v) => {
     if (v.match("^filters")) {
       filters = v.substring(8).split(",");
     }
