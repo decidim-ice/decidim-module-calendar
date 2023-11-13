@@ -72,6 +72,11 @@ module Decidim
         @finish || start
       end
 
+      def hour
+        return nil if start.is_a?(Date)
+        start.strftime("%H:%M")
+      end
+
       def full_title
         @full_title ||= case __getobj__.class.name
                         when "Decidim::ParticipatoryProcessStep"
