@@ -88,13 +88,11 @@ const calendar = new Calendar(calendarEl, {
     return [];
   },
   eventContent: (info) => {
-    if ("subtitle" in info.event.extendedProps) {
-      return { 
-        html: `<span class="fc-title"><b>${info.event.title}</b> - ${info.event.extendedProps.subtitle}</span>`
-      };
-    }
-    return { 
-      html: `<span class="fc-title">${info.event.title}</span>`
+    console.log(info)
+    const subtitle = "subtitle" in info.event.extendedProps ? ` - ${info.event.extendedProps.subtitle}` : "";
+    const hour = "hour" in info.event.extendedProps ? `${info.event.extendedProps.hour}  ` : "";
+    return {
+      html: `<span class="fc-title">${hour}<b>${info.event.title}</b>${subtitle}</span>`
     };
   },
   eventClick: (info) => {

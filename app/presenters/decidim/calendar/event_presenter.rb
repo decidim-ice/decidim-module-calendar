@@ -72,18 +72,13 @@ module Decidim
         @finish || start
       end
 
-      def hour
-        return nil if start.is_a?(Date)
-        start.strftime("%H:%M")
-      end
-
       def full_title
         @full_title ||= case __getobj__.class.name
                         when "Decidim::ParticipatoryProcessStep"
                           participatory_process.title
                         else
                           title
-                        end
+        end
       end
 
       def subtitle
@@ -92,13 +87,19 @@ module Decidim
                         title
                       else
                         ""
-                      end
+        end
       end
 
       def all_day?
         return false if start.nil? || finish.nil?
 
         (start.to_date..finish.to_date).count > 1
+      end
+
+      def hour
+        return nil if start.is_a?(Date)
+
+        start.strftime("%H:%M")
       end
     end
   end
