@@ -78,7 +78,7 @@ module Decidim
                           participatory_process.title
                         else
                           title
-        end
+                        end
       end
 
       def subtitle
@@ -87,7 +87,7 @@ module Decidim
                         title
                       else
                         ""
-        end
+                      end
       end
 
       def all_day?
