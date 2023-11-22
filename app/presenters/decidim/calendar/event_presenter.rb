@@ -97,7 +97,7 @@ module Decidim
       end
 
       def hour
-        return nil if start.is_a?(Date)
+        return nil if start.is_a?(Date) || all_day?
 
         start.strftime("%H:%M")
       end

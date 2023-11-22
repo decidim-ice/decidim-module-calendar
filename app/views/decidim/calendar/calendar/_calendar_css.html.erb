@@ -14,5 +14,23 @@
       border-color: <%= item[:color] %>;
       color: <%= item[:fontColor] %>;
     }
+
+    .calendar-event-<%= item[:id]%>.has-hour {
+      background-color: transparent;
+      border-color: transparent;
+      color: inherit;
+    }
+    .calendar-event-<%= item[:id]%>.has-hour::before  {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 5px; 
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px; 
+      background-color: <%= item[:color] %>; 
+      border-radius: 50%;
+    }
   <% end %>
 </style>

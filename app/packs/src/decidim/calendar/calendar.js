@@ -89,8 +89,12 @@ const calendar = new Calendar(calendarEl, {
   },
   eventContent: (info) => {
     console.log(info)
-    const subtitle = "subtitle" in info.event.extendedProps ? ` - ${info.event.extendedProps.subtitle}` : "";
-    const hour = "hour" in info.event.extendedProps ? `${info.event.extendedProps.hour}  ` : "";
+    const subtitle = "subtitle" in info.event.extendedProps
+      ? ` - ${info.event.extendedProps.subtitle}`
+      : "";
+    const hour = "hour" in info.event.extendedProps
+      ? ` ${info.event.extendedProps.hour}  `
+      : "";
     return {
       html: `<span class="fc-title">${hour}<b>${info.event.title}</b>${subtitle}</span>`
     };

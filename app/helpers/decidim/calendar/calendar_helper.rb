@@ -26,7 +26,7 @@ module Decidim
           url: event.link,
           resourceId: event.type,
           allDay: event.all_day?,
-          classNames: ["calendar-event-#{event.type}#{event.hour ? "" : " all-day"}"],
+          classNames: ["calendar-event-#{event.type}#{event.hour ? " has-hour" : " all-day"}"],
           subtitle: (translated_attribute(event.subtitle) unless event.subtitle.empty?)
         }.compact
       end
