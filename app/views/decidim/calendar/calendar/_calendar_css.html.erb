@@ -15,12 +15,12 @@
       color: <%= item[:fontColor] %>;
     }
 
-    .calendar-event-<%= item[:id]%>.has-hour {
+    .calendar-event-<%= item[:id] %>.has-hour {
       background-color: transparent;
       border-color: transparent;
       color: inherit;
     }
-    .calendar-event-<%= item[:id]%>.has-hour::before {
+    .calendar-event-<%= item[:id] %>.has-hour::before {
       content: "";
       position: absolute;
       left: 0;
@@ -28,7 +28,7 @@
       transform: translateY(-50%);
       width: 8px;
       height: 8px;
-      background-color: <%= item[:color]%>;
+      background-color: <%= item[:color] %>;
       border-radius: 50%;
     }
 
