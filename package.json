@@ -24,11 +24,11 @@
     "frappe-gantt": "^0.6.1"
   },
   "devDependencies": {
+    "@decidim/stylelint-config": "^0.27.4",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.22.0",
-    "stylelint": "^15.11.0",
     "webpack-dev-server": "^4.15.1"
   }
 }
