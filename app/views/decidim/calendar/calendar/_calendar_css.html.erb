@@ -20,6 +20,7 @@
       border-color: transparent;
       color: inherit;
     }
+
     .calendar-event-<%= item[:id] %>.has-hour::before {
       content: "";
       position: absolute;
@@ -30,6 +31,10 @@
       height: 8px;
       background-color: <%= item[:color] %>;
       border-radius: 50%;
+    }
+
+    div.fc-scroller.fc-scroller-liquid .calendar-event-<%= item[:id] %>.has-hour::before {
+      display: none;
     }
 
     .button.calendar {

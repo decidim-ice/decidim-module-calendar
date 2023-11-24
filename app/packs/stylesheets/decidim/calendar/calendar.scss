@@ -33,4 +33,20 @@
   .fc-content-skeleton td {
     background-color: #fff;
   }
+
+  $small: 576px;
+  @media screen and (max-width: $small) {
+    .fc-button {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      font-size: 0.6rem;
+      margin: 0px 1px 1px 0px;
+    }
+
+    .fc-toolbar-title {
+      font-size: 1rem;
+      inline-size: 20vw;
+      overflow-wrap: break-word;
+    }
+  }
 }

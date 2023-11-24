@@ -41,11 +41,17 @@ const getInitialDate = () => {
 
 const getInitialView = () => {
   let view = calendarEl.dataset.defaultview || "dayGridMonth"
-  window.location.hash.substring(1).split("&").forEach((v) => {
-    if (v.match("^view")) {
-      view = v.substring(5);
-    }
-  });
+  const isMobile = window.innerWidth < 576;
+
+  if (isMobile) {
+    view = "dayGridWeek"; 
+  } else {
+    window.location.hash.substring(1).split("&").forEach((v) => {
+      if (v.match("^view")) {
+        view = v.substring(5);
+      }
+    });
+  }
   return view;
 };
 
@@ -88,7 +94,6 @@ const calendar = new Calendar(calendarEl, {
     return [];
   },
   eventContent: (info) => {
-    console.log(info)
     const subtitle = "subtitle" in info.event.extendedProps
       ? ` - ${info.event.extendedProps.subtitle}`
       : "";
@@ -96,7 +101,7 @@ const calendar = new Calendar(calendarEl, {
       ? `${info.event.extendedProps.hour}  `
       : "";
     return {
-      html: `<span class="fc-title">${hour}<b>${info.event.title}</b>${subtitle}</span>`
+      html: `<span class="fc-title" >${hour}<b>${info.event.title}</b>${subtitle}</span>`
     };
   },
   eventClick: (info) => {
