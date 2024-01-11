@@ -10,7 +10,7 @@
            } %>
     <div class="calendar-filters button-group">
       <% available_events.each do |_key,item| %>
-        <button class="button tiny cal-filter <%= item[:id] %>" id="<%= item[:id] %>"><%= I18n.t(item[:id], scope: "decidim.calendar.index.filters") %></button>
+        <button class="button button__sm button__transparent-secondary cal-filter <%= item[:id] %>" id="<%= item[:id] %>"><%= I18n.t(item[:id], scope: "decidim.calendar.index.filters") %></button>
       <% end %>
     </div>
     <%= content_tag :div, "", id: "calendar", data: {
