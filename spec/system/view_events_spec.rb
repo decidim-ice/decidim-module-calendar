@@ -21,7 +21,7 @@ describe "User interact with the calendar", type: :system do
     end
 
     it "show the calendar" do
-      expect(page).to have_i18n_content("Calendar")
+      expect(page).to have_i18n_content("CALENDAR")
     end
 
     it "show a item in calendar" do
