@@ -74,6 +74,7 @@ const calendar = new Calendar(calendarEl, {
     ? parseInt(calendarEl.dataset.firstday)
     : 1,
   initialDate: getInitialDate(),
+  contentHeight: "auto",
   headerToolbar: {
     left: "prev,next today",
     center: "title",
