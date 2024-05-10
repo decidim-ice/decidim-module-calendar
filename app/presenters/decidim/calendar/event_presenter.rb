@@ -99,9 +99,9 @@ module Decidim
       def hour
         return nil if start.is_a?(Date) || all_day?
 
-        hour12 = Decidim::Calendar.calendar_options[:hour12]
+        format = Decidim::Calendar.calendar_options[:hour12] ? "%I:%M %p" : "%H:%M"
 
-        hour12 ? start.strftime("%I:%M %p") : start.strftime("%H:%M")
+        start.strftime(format)
       end
     end
   end
