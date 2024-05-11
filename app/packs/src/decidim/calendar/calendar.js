@@ -69,6 +69,7 @@ const calendar = new Calendar(calendarEl, {
   plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
   initialView: getInitialView(),
   dayMaxEvents: 3,
+  contentHeight: 'auto',
   locale: currentLocale,
   firstDay: calendarEl.dataset.hasOwnProperty("firstday") // eslint-disable-line no-prototype-builtins
     ? parseInt(calendarEl.dataset.firstday)
