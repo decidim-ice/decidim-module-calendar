@@ -19,12 +19,13 @@ describe "manage external events", type: :system do
       end
     end
 
+    
     it "create a new external event" do
       start_time = Time.current
       end_time = 2.days.from_now
 
-      fill_in "external_event[start_at]", with: start_time.strftime("%Y-%m-%dT%H:%M")
-      fill_in "external_event[end_at]", with: end_time.strftime("%Y-%m-%dT%H:%M")
+      fill_in "external_event[start_at]", with: start_time.strftime("%m/%d/%Y, %I:%M %p")
+      fill_in "external_event[end_at]", with: end_time.strftime("%m/%d/%Y, %I:%M %p")
 
       within ".new_event" do
         fill_in_i18n(
@@ -40,6 +41,8 @@ describe "manage external events", type: :system do
         find("*[type=submit]").click
       end
 
+      puts start_time.strftime("%m/%d/%Y, %I:%M %p")
+      puts end_time.strftime("%m/%d/%Y, %I:%M %p")
       expect(page).to have_admin_callout("successfully")
 
       within ".table-list" do
