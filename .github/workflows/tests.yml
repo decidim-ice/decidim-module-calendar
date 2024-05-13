@@ -53,6 +53,11 @@ jobs:
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
+ 
+      - uses: actions/download-artifact@v3
+        with:
+          name: workspace
+          path: /tmp
 
       - uses: actions/setup-node@v3
         with:
@@ -84,3 +89,9 @@ jobs:
         uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: screenshots
+          path: ./spec/decidim_dummy_app/tmp/screenshots
