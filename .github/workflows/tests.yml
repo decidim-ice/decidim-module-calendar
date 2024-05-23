@@ -53,11 +53,6 @@ jobs:
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
- 
-      - uses: actions/download-artifact@v3
-        with:
-          name: workspace
-          path: /tmp
 
       - uses: actions/setup-node@v3
         with:
