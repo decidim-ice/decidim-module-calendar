@@ -17,7 +17,7 @@ module Decidim
         end
       end
 
-      initializer "[module_name].webpacker.assets_path" do
+      initializer "decidim_calendar.webpacker.assets_path" do
         Decidim.register_assets_path File.expand_path("app/packs", root)
       end
 
@@ -27,6 +27,13 @@ module Decidim
                         I18n.t("menu.calendar", scope: "decidim.calendar"),
                         decidim_calendar.calendar_index_path,
                         position: 6.0,
+                        active: :inclusive
+        end
+        Decidim.menu :home_content_block_menu do |menu|
+          menu.add_item :calendar,
+                        I18n.t("menu.calendar", scope: "decidim.calendar"),
+                        decidim_calendar.calendar_index_path,
+                        position: 50.0,
                         active: :inclusive
         end
       end

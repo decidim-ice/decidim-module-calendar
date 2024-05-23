@@ -1,6 +1,6 @@
 <% add_decidim_page_title(t("calendar.index.title", scope: "decidim")) %>
 
-<%= append_stylesheet_pack_tag "decidim_calendar" %>
+<% append_stylesheet_pack_tag "decidim_calendar" %>
 <%= render "calendar_css" %>
 
 <%= participatory_space_wrapper do %>
@@ -28,4 +28,4 @@
   </div>
 <% end %>
 
-<%= append_javascript_pack_tag "decidim_calendar" %>
+<% append_javascript_pack_tag "decidim_calendar" %>

@@ -23,8 +23,8 @@ describe "manage external events", type: :system do
       start_time = Time.current
       end_time = 2.days.from_now
 
-      fill_in "external_event[start_at]", with: start_time.strftime("%Y-%m-%dT%H:%M")
-      fill_in "external_event[end_at]", with: end_time.strftime("%Y-%m-%dT%H:%M")
+      fill_in "external_event[start_at]", with: start_time
+      fill_in "external_event[end_at]", with: end_time
 
       within ".new_event" do
         fill_in_i18n(
@@ -76,8 +76,8 @@ describe "manage external events", type: :system do
       start_time = Time.current
       end_time = 2.days.from_now
 
-      fill_in "external_event[start_at]", with: start_time.strftime("%Y-%m-%dT%H:%M")
-      fill_in "external_event[end_at]", with: end_time.strftime("%Y-%m-%dT%H:%M")
+      fill_in "external_event[start_at]", with: start_time
+      fill_in "external_event[end_at]", with: end_time
 
       within ".edit_event" do
         fill_in_i18n(
