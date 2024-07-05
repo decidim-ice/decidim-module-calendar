@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "View menus", type: :system do
+describe "View menus" do
   let!(:organization) { create(:organization) }
   let!(:participatory_process) { create(:participatory_process, :published, organization:) }
   let!(:menu_block) { create(:content_block, organization:, scope_name: :homepage, manifest_name: :global_menu) }

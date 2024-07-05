@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "manage help section", type: :system do
+describe "manage help section" do
   let(:organization) { create(:organization) }
   let(:user) { create(:user, :admin, :confirmed, organization:) }
 

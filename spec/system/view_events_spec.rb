@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "User interact with the calendar", type: :system do
+describe "User interact with the calendar" do
   let!(:organization) { create(:organization) }
   let!(:user) { create(:user, :confirmed, organization:) }
   let!(:participatory_process) { create(:participatory_process, :with_steps, :active, :published, organization:) }
