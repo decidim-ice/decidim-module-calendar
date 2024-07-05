@@ -12,7 +12,7 @@
     <div id="dialog-desc-calendarShare" class="meeting-list__modal-text"><%= t(".copy_calendar_url_description") %></div>
 
     <div class="meeting-list__modal-input">
-      <input id="urlCalendarUrl" type="text" title="<%= t(".calendar_url") %>" value="<%= "#{path}" %>" readonly>
+      <input id="urlCalendarUrl" type="text" title="<%= t(".calendar_url") %>" value="<%= "#{path}" %>" autocomplete="off" readonly>
       <button
         data-clipboard-copy="#urlCalendarUrl"
         data-clipboard-copy-label="<%= t(".copy_calendar_url_copied") %>"
