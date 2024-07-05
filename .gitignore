@@ -29,3 +29,4 @@ tailwind.config.js
 *.gem
 node_modules/
 npm_debug.log
+.rubocop-*
