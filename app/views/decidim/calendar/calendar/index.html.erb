@@ -6,7 +6,7 @@
 <%= participatory_space_wrapper do %>
   <div class="row columns">
       <%= render partial: "decidim/meetings/calendar_modal", locals: {
-             path:  calendar_ical_path
+             path:  calendar_ical_url
            } %>
     <div class="calendar-filters button-group">
       <% available_events.each do |_key,item| %>
