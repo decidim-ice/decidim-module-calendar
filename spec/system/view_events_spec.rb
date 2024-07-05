@@ -5,10 +5,10 @@ require "spec_helper"
 describe "User interact with the calendar" do
   let!(:organization) { create(:organization) }
   let!(:user) { create(:user, :confirmed, organization:) }
-  let!(:participatory_process) { create(:participatory_process, :with_steps, :active, :published, organization:) }
+  let!(:participatory_process) { create(:participatory_process, :with_steps, :active, :published, skip_injection: true, organization:) }
   let!(:component) { create(:meeting_component, participatory_space: participatory_process) }
-  let!(:meeting) { create(:meeting, :published, component:) }
-  let!(:unpublished_meeting) { create(:meeting, component:) }
+  let!(:meeting) { create(:meeting, :published, component:, skip_injection: true) }
+  let!(:unpublished_meeting) { create(:meeting, component:, skip_injection: true) }
   let!(:external_event) { create(:external_event, organization:) }
 
   before do
