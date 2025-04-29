@@ -28,6 +28,7 @@
     "@decidim/dev": "^0.30.0",
     "@decidim/eslint-config": "^0.30.0",
     "@decidim/stylelint-config": "^0.30.0",
-    "@decidim/prettier-config": "^0.30.0"
+    "@decidim/prettier-config": "^0.30.0",
+    "@decidim/webpacker": "^0.30.0"
   }
 }
