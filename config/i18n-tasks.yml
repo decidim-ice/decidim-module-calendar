@@ -3,6 +3,10 @@
 base_locale: en
 locales: [en]
 
+ignore_unused:
+  - "decidim.calendar.index.filters.*"
+  - "decidim.calendar.menu.*"
+
 data:
   external:
     - "<%= %x[bundle info decidim-participatory_processes --path].chomp %>/config/locales/%{locale}.yml"
