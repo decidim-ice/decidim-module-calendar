@@ -47,7 +47,6 @@ module Decidim
       end
 
       def start
-        # byebug
         @start ||= if respond_to?(:start_date)
                      start_date
                    elsif respond_to?(:start_at)

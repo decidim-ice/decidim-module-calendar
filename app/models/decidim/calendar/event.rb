@@ -31,7 +31,7 @@ module Decidim
             # not moderated
             query = query.not_hidden if query.respond_to? :not_hidden
             # not withdrawn
-            query = query.except_withdrawn if query.respond_to? :except_withdrawn
+            query = query.not_withdrawn if query.respond_to? :not_withdrawn
             yield query
           end
         end

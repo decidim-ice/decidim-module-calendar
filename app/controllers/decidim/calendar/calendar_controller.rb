@@ -21,7 +21,7 @@ module Decidim
       end
 
       def ical
-        filename = "#{current_organization.name.parameterize}-calendar"
+        filename = "#{current_organization.name[current_organization.default_locale.to_s].parameterize}-calendar"
         response.headers["Content-Disposition"] = "attachment; filename=#{filename}.ical"
         render plain: GeneralCalendar.for(current_organization), content_type: "text/calendar"
       end

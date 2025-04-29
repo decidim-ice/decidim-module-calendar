@@ -21,23 +21,32 @@ calendar view form.
 - Download ICAL for import
 - Customize colors and event sources
 
-## Instalation
+## Installation
 
 Edit the Gemfile and add this lines:
 
 ```ruby
-gem "decidim-calendar", git: "https://github.com/openpoke/decidim-module-calendar"
+gem "decidim-calendar", git: "https://github.com/decidim-ice/decidim-module-calendar"
 ```
 
 Run this rake tasks:
 
 ```bash
-bundle exec rake decidim_calendar:install:migrations
-bundle exec rails decidim_calendar:webpacker:install
-bundle exec rake db:migrate
+bundle
+bin/rails decidim:upgrade
+bin/rails db:migrate
 ```
 
 To keep the gem up to date, you can use the commands above to also update it.
+
+> **EXPERTS ONLY**
+>
+> Under the hood, when running `bundle exec rails decidim:upgrade` the `decidim-calendar` gem will run the following two tasks (that can also be run manually if you consider):
+>
+> ```bash
+> bin/rails decidim_calendar:install:migrations
+> bin/rails decidim_calendar:webpacker:install
+> ```
 
 ## Configuration
 
@@ -149,7 +158,16 @@ Clone this repository or fork and run:
 
 ```bash
 bundle install
+
 bundle exec rake development_app
+```
+
+## Testing
+
+```bash
+bundle exec rake test_app
+
+bundle exec rake spec
 ```
 
 ### Localization

@@ -5,6 +5,10 @@ require "spec_helper"
 describe "manage external events" do
   let(:organization) { create(:organization) }
   let(:user) { create(:user, :admin, :confirmed, organization:) }
+  let(:start_date) { Time.current.strftime("%d/%m/%Y") }
+  let(:start_time) { Time.current.strftime("%H:%M") }
+  let(:end_date) { 2.days.from_now.strftime("%d/%m/%Y") }
+  let(:end_time) { 2.days.from_now.strftime("%H:%M") }
 
   before do
     switch_to_host(organization.host)
@@ -20,12 +24,6 @@ describe "manage external events" do
     end
 
     it "create a new external event" do
-      start_time = Time.current
-      end_time = 2.days.from_now
-
-      fill_in "external_event[start_at]", with: start_time
-      fill_in "external_event[end_at]", with: end_time
-
       within ".new_event" do
         fill_in_i18n(
           :external_event_title,
@@ -34,6 +32,11 @@ describe "manage external events" do
           es: "Evento de ejemplo",
           ca: "Evento de ejemplo"
         )
+
+        fill_in_datepicker "external_event_start_at_date", with: start_date
+        fill_in_timepicker "external_event_start_at_time", with: start_time
+        fill_in_datepicker "external_event_end_at_date", with: end_date
+        fill_in_timepicker "external_event_end_at_time", with: end_time
 
         fill_in :external_event_url, with: "https://example.org"
 
@@ -73,11 +76,10 @@ describe "manage external events" do
         click_on "Edit"
       end
 
-      start_time = Time.current
-      end_time = 2.days.from_now
-
-      fill_in "external_event[start_at]", with: start_time
-      fill_in "external_event[end_at]", with: end_time
+      fill_in_datepicker "external_event_start_at_date", with: start_date
+      fill_in_timepicker "external_event_start_at_time", with: start_time
+      fill_in_datepicker "external_event_end_at_date", with: end_date
+      fill_in_timepicker "external_event_end_at_time", with: end_time
 
       within ".edit_event" do
         fill_in_i18n(
