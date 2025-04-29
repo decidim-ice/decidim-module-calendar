@@ -40,3 +40,9 @@ module Decidim
     end
   end
 end
+
+Decidim.register_global_engine(
+  :decidim_calendar,
+  Decidim::Calendar::Engine,
+  at: "/calendar"
+)

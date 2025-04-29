@@ -2,10 +2,8 @@
 
 <%= append_stylesheet_pack_tag "decidim_calendar_gantt" %>
 
-<%= participatory_space_wrapper do %>
-  <div class="row columns">
-    <%= content_tag :div, "", id: "gantt", data: { tasks: tasks } %>
-  </div>
-<% end %>
+<div class="row columns">
+  <%= content_tag :div, "", id: "gantt", data: { tasks: tasks } %>
+</div>
 
 <%= append_javascript_pack_tag "decidim_calendar_gantt" %>

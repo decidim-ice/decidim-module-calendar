@@ -5,7 +5,6 @@ module Decidim
     class CalendarController < Decidim::Calendar::ApplicationController
       helper Decidim::Calendar::CalendarHelper
       include Decidim::Calendar::CalendarHelper
-      include ParticipatorySpaceContext
       layout "calendar"
 
       helper_method :tasks
@@ -27,14 +26,6 @@ module Decidim
       end
 
       private
-
-      # return nothing instead of NotImplementedError
-      # This should give some compatibility with external modules (ie. term customizer)
-      def current_participatory_space; end
-
-      def current_participatory_space_manifest
-        @current_participatory_space_manifest ||= Decidim.find_participatory_space_manifest(:calendar)
-      end
 
       def tasks
         @tasks ||= @events.map { |space| participatory_gantt(space) }
