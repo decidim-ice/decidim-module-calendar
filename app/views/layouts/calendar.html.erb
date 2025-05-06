@@ -1,6 +1,9 @@
 <%= render "layouts/decidim/application" do %>
   <%= render layout: "layouts/decidim/shared/layout_center", locals: { columns: 10 } do %>
     <%= render partial: "layouts/calendar_navigation" %>
-    <%= yield %>
+
+    <div class="wrapper">
+      <%= yield %>
+    </div>
   <% end %>
 <% end %>

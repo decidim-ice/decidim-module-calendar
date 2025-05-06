@@ -33,3 +33,9 @@ module Decidim
     end
   end
 end
+
+Decidim.register_global_engine(
+  :decidim_admin_calendar,
+  Decidim::Calendar::AdminEngine,
+  at: "/admin_calendar"
+)
